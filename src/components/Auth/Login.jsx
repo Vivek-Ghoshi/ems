@@ -12,45 +12,57 @@ const Login = () => {
   };
   return (
     <>
-      <div className="w-screen h-screen flex items-center bg-zinc-700 justify-center">
-        <div className="w-[27%] h-[40%] border-2 border-zinc-500 rounded-md">
-          <h2 className="font-extrabold text-2xl text-white ml-28 mt-2">
-            Login page
-          </h2>
-          <form
-            onSubmit={(e) => {
-              submitHandler(e);
-            }}
-            className="flex flex-col"
-          >
+    <div className="w-screen h-screen flex items-center bg-[#1c1c1c]  justify-center">
+      <div className="w-[400px] p-8 backdrop-blur-sm bg-[#1c1c1c] rounded-2xl shadow-2xl border border-white/20 hover:border-white/40 transition-all duration-300">
+        <h2 className="font-extrabold text-3xl text-white text-center mb-8">
+         Login 
+        </h2>
+        <form
+          onSubmit={(e) => {
+            submitHandler(e);
+          }}
+          className="flex flex-col gap-4"
+        >
+          <div className="relative">
             <input
               value={email}
               onChange={(e) => {
                 setemail(e.target.value);
               }}
-              className="mx-4 mt-8 rounded-full p-2 outline-none border-2 border-emerald-300 bg-transparent text-white"
+              className="w-full px-6 py-3 rounded-lg bg-zinc-800/50 text-white border border-zinc-700 outline-none focus:border-white transition-all duration-300"
               type="email"
               name="email"
               placeholder="Type your email..."
             />
+          </div>
+          <div className="relative">
             <input
               value={password}
               onChange={(e) => {
                 setpassword(e.target.value);
               }}
-              className="mx-4 mt-2  rounded-full p-2 border-2 outline-none border-emerald-300 bg-transparent text-white"
+              className="w-full px-6 py-3 rounded-lg bg-zinc-800/50 text-white border border-zinc-700 outline-none focus:border-white transition-all duration-300"
               type="password"
               name="password"
               placeholder="Type your password..."
             />
-            <button className="bg-emerald-600 w-32 mt-5 p-2 font-bold mx-28 text-white rounded-full">
-              Login
-            </button>
-          </form>
-        </div>
+          </div>
+          <button className="w-full mt-4 py-3 px-6 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-all duration-300 transform hover:scale-[1.02]">
+            Login
+          </button>
+        </form>
       </div>
-    </>
+    </div>
+  </>
   );
 };
 
 export default Login;
+
+
+
+
+
+   
+  
+
