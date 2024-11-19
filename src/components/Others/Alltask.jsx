@@ -1,43 +1,29 @@
 import React from 'react'
 
-const Alltask = () => {
+const Alltask = ({data}) => {
+  
   return (
-    <div className='rounded h-44 mt-3 p-5 overflow-auto'>
+    <div className='rounded h-44 mt-3 p-5  h-auto'>
       <div className='text-white mb-2 bg-blue-400 rounded-xl px-4 py-3 flex items-center justify-evenly'>
-        <h2>vivek</h2>
-        <h3>Task name</h3>
-        <h5>Status</h5>
+        <h3 className='w-1/5 text-center  '>Employee Name</h3>
+        <h2 className='w-1/5  text-center'>New Task</h2>
+        <h5 className='w-1/5 text-center '>Active Task</h5>
+        <h5 className='w-1/5 text-center '>Completed Task</h5>
+        <h5 className='w-1/5  text-center'>failed</h5>
       </div>
-      <div className='text-white mb-2 bg-red-400 rounded-xl px-4 py-3 flex items-center justify-evenly'>
-        <h2>vivek</h2>
-        <h3>Task name</h3>
-        <h5>Status</h5>
+       {data.employees.map((elem,id)=>{
+
+        return  <div key={id} className='text-white mb-2 bg-transparent rounded-xl px-4 py-3 flex items-center justify-evenly'>
+        
+        <h2 className='w-1/5 text-white text-center '>{elem.firstName}</h2>
+        <h5 className='w-1/5 text-yellow-400 text-center'>{elem.taskCounts.new}</h5>
+        <h5 className='w-1/5 text-yellow-400 text-center'>{elem.taskCounts.active}</h5>
+        <h5 className='w-1/5 text-green-500 text-center'>{elem.taskCounts.completed}</h5>
+        <h5 className='w-1/5 text-red-500 text-center'>{elem.taskCounts.failed}</h5>
       </div>
-      <div className='text-white mb-2 bg-pink-400 rounded-xl px-4 py-3 flex items-center justify-evenly'>
-        <h2>vivek</h2>
-        <h3>Task name</h3>
-        <h5>Status</h5>
-      </div>
-      <div className='text-white mb-2 bg-pink-400 rounded-xl px-4 py-3 flex items-center justify-evenly'>
-        <h2>vivek</h2>
-        <h3>Task name</h3>
-        <h5>Status</h5>
-      </div>
-      <div className='text-white mb-2 bg-emerald-400 rounded-xl px-4 py-3 flex items-center justify-evenly'>
-        <h2>vivek</h2>
-        <h3>Task name</h3>
-        <h5>Status</h5>
-      </div>
-      <div className='text-white bg-yellow-400 mb-2 rounded-xl px-4 py-3 flex items-center justify-evenly'>
-        <h2>vivek</h2>
-        <h3>Task name</h3>
-        <h5>Status</h5>
-      </div>
-      <div className='text-white bg-green-400 rounded-xl px-4 py-3 flex items-center justify-evenly'>
-        <h2>vivek</h2>
-        <h3>Task name</h3>
-        <h5>Status</h5>
-      </div>
+      
+       })}
+     
     </div>
   )
 }
